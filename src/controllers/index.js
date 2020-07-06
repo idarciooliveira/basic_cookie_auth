@@ -12,4 +12,8 @@ indexController.profile = async (req, res) => {
   res.render('profile');
 };
 
+indexController.logout = async (req, res) => {
+  res.redirect('/login');
+};
+
 module.exports = indexController;
