@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const hbs = require('express-handlebars');
 const path = require('path');
@@ -7,8 +8,8 @@ const app = express();
 
 app.use(
   sessions({
-    cookieName: 'session',
-    secret: 'sdasdansljdnasn',
+    cookieName: process.env.COOKIE,
+    secret: process.env.SECRET,
     duration: 30 * 60 * 1000, //30 min
   })
 );
